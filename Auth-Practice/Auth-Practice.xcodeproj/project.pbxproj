@@ -10,9 +10,13 @@
 		072F8F8C76559E9C9E555ECA /* Pods_Auth_Practice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB8511A64937A83DB8EA021A /* Pods_Auth_Practice.framework */; };
 		E25DC3F427AD077900AA1228 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DC3F327AD077900AA1228 /* AppDelegate.swift */; };
 		E25DC3F627AD077900AA1228 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DC3F527AD077900AA1228 /* SceneDelegate.swift */; };
-		E25DC3F827AD077900AA1228 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DC3F727AD077900AA1228 /* ViewController.swift */; };
 		E25DC3FD27AD077C00AA1228 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E25DC3FC27AD077C00AA1228 /* Assets.xcassets */; };
 		E25DC40027AD077C00AA1228 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E25DC3FE27AD077C00AA1228 /* LaunchScreen.storyboard */; };
+		E25DC40F27AD163B00AA1228 /* LoginEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DC40E27AD163B00AA1228 /* LoginEntryViewController.swift */; };
+		E25DC41127AD236B00AA1228 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E25DC41027AD236B00AA1228 /* Color.xcassets */; };
+		E25DC41427AD258000AA1228 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DC41327AD258000AA1228 /* Const.swift */; };
+		E25DC41827AD288800AA1228 /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DC41727AD288800AA1228 /* UIStackView+.swift */; };
+		E25DC41A27AD290100AA1228 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DC41927AD290100AA1228 /* UIView+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,10 +26,14 @@
 		E25DC3F027AD077900AA1228 /* Auth-Practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Auth-Practice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E25DC3F327AD077900AA1228 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E25DC3F527AD077900AA1228 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E25DC3F727AD077900AA1228 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E25DC3FC27AD077C00AA1228 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E25DC3FF27AD077C00AA1228 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E25DC40127AD077C00AA1228 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E25DC40E27AD163B00AA1228 /* LoginEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEntryViewController.swift; sourceTree = "<group>"; };
+		E25DC41027AD236B00AA1228 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
+		E25DC41327AD258000AA1228 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		E25DC41727AD288800AA1228 /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
+		E25DC41927AD290100AA1228 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +96,8 @@
 		E25DC40727AD0F8C00AA1228 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				E25DC41627AD286A00AA1228 /* Extenstion */,
+				E25DC41527AD285F00AA1228 /* Constant */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -95,7 +105,7 @@
 		E25DC40827AD0F9E00AA1228 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				E25DC3F727AD077900AA1228 /* ViewController.swift */,
+				E25DC40D27AD15C200AA1228 /* ViewController */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -132,8 +142,34 @@
 			isa = PBXGroup;
 			children = (
 				E25DC3FC27AD077C00AA1228 /* Assets.xcassets */,
+				E25DC41027AD236B00AA1228 /* Color.xcassets */,
 			);
 			path = Asset;
+			sourceTree = "<group>";
+		};
+		E25DC40D27AD15C200AA1228 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E25DC40E27AD163B00AA1228 /* LoginEntryViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		E25DC41527AD285F00AA1228 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				E25DC41327AD258000AA1228 /* Const.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		E25DC41627AD286A00AA1228 /* Extenstion */ = {
+			isa = PBXGroup;
+			children = (
+				E25DC41727AD288800AA1228 /* UIStackView+.swift */,
+				E25DC41927AD290100AA1228 /* UIView+.swift */,
+			);
+			path = Extenstion;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +234,7 @@
 			files = (
 				E25DC40027AD077C00AA1228 /* LaunchScreen.storyboard in Resources */,
 				E25DC3FD27AD077C00AA1228 /* Assets.xcassets in Resources */,
+				E25DC41127AD236B00AA1228 /* Color.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,9 +287,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E25DC3F827AD077900AA1228 /* ViewController.swift in Sources */,
+				E25DC41A27AD290100AA1228 /* UIView+.swift in Sources */,
+				E25DC41827AD288800AA1228 /* UIStackView+.swift in Sources */,
 				E25DC3F427AD077900AA1228 /* AppDelegate.swift in Sources */,
+				E25DC41427AD258000AA1228 /* Const.swift in Sources */,
 				E25DC3F627AD077900AA1228 /* SceneDelegate.swift in Sources */,
+				E25DC40F27AD163B00AA1228 /* LoginEntryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,7 +436,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 53AWLX6CVV;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Auth-Practice/Info.plist";
+				INFOPLIST_FILE = "Auth-Practice/Resource/Support/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -424,7 +464,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 53AWLX6CVV;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Auth-Practice/Info.plist";
+				INFOPLIST_FILE = "Auth-Practice/Resource/Support/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
