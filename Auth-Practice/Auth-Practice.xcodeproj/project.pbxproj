@@ -46,7 +46,6 @@
 				A160A08D2A6CF606E9142521 /* Pods-Auth-Practice.debug.xcconfig */,
 				884DD30C4C17CAC97A4D88CC /* Pods-Auth-Practice.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -79,14 +78,62 @@
 		E25DC3F227AD077900AA1228 /* Auth-Practice */ = {
 			isa = PBXGroup;
 			children = (
-				E25DC3F327AD077900AA1228 /* AppDelegate.swift */,
-				E25DC3F527AD077900AA1228 /* SceneDelegate.swift */,
-				E25DC3F727AD077900AA1228 /* ViewController.swift */,
-				E25DC3FC27AD077C00AA1228 /* Assets.xcassets */,
-				E25DC3FE27AD077C00AA1228 /* LaunchScreen.storyboard */,
-				E25DC40127AD077C00AA1228 /* Info.plist */,
+				E25DC40727AD0F8C00AA1228 /* Global */,
+				E25DC40827AD0F9E00AA1228 /* Source */,
+				E25DC40927AD0FAC00AA1228 /* Resource */,
 			);
 			path = "Auth-Practice";
+			sourceTree = "<group>";
+		};
+		E25DC40727AD0F8C00AA1228 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		E25DC40827AD0F9E00AA1228 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				E25DC3F727AD077900AA1228 /* ViewController.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		E25DC40927AD0FAC00AA1228 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				E25DC40C27AD104D00AA1228 /* Asset */,
+				E25DC40B27AD102B00AA1228 /* Storyboard */,
+				E25DC40A27AD100E00AA1228 /* Support */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		E25DC40A27AD100E00AA1228 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				E25DC3F327AD077900AA1228 /* AppDelegate.swift */,
+				E25DC3F527AD077900AA1228 /* SceneDelegate.swift */,
+				E25DC40127AD077C00AA1228 /* Info.plist */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		E25DC40B27AD102B00AA1228 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				E25DC3FE27AD077C00AA1228 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		E25DC40C27AD104D00AA1228 /* Asset */ = {
+			isa = PBXGroup;
+			children = (
+				E25DC3FC27AD077C00AA1228 /* Assets.xcassets */,
+			);
+			path = Asset;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
