@@ -17,6 +17,7 @@
 		E25DC41427AD258000AA1228 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DC41327AD258000AA1228 /* Const.swift */; };
 		E25DC41827AD288800AA1228 /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DC41727AD288800AA1228 /* UIStackView+.swift */; };
 		E25DC41A27AD290100AA1228 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DC41927AD290100AA1228 /* UIView+.swift */; };
+		E25DC41C27AD3A5D00AA1228 /* EmailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DC41B27AD3A5D00AA1228 /* EmailLoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		E25DC41327AD258000AA1228 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		E25DC41727AD288800AA1228 /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
 		E25DC41927AD290100AA1228 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		E25DC41B27AD3A5D00AA1228 /* EmailLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				E25DC40E27AD163B00AA1228 /* LoginEntryViewController.swift */,
+				E25DC41B27AD3A5D00AA1228 /* EmailLoginViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E25DC41A27AD290100AA1228 /* UIView+.swift in Sources */,
+				E25DC41C27AD3A5D00AA1228 /* EmailLoginViewController.swift in Sources */,
 				E25DC41827AD288800AA1228 /* UIStackView+.swift in Sources */,
 				E25DC3F427AD077900AA1228 /* AppDelegate.swift in Sources */,
 				E25DC41427AD258000AA1228 /* Const.swift in Sources */,
