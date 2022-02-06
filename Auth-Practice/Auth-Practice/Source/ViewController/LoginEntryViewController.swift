@@ -8,6 +8,7 @@
 import UIKit
 
 import SnapKit
+
 import Then
 import Alamofire
 
@@ -22,14 +23,14 @@ class LoginEntryViewController: UIViewController {
     private let kakaoLoginButton = UIButton().then {
         var config = UIButton.Configuration.plain()
         config.title = "카카오 로그인"
-        config.baseForegroundColor = Const.color.black
+        config.baseForegroundColor = Const.color.black020
         config.image = Const.image.kakao
         config.imagePadding = 80
         config.contentInsets = NSDirectionalEdgeInsets(top: 13, leading: 18, bottom: 14, trailing: 122)
         $0.configuration = config
         $0.backgroundColor = Const.color.yellow100
         $0.titleLabel?.font = .systemFont(ofSize: 17)
-        $0.layer.cornerRadius = 5
+        $0.layer.cornerRadius = 4
     }
     
     private let naverLoginButton = UIButton().then {
@@ -42,13 +43,13 @@ class LoginEntryViewController: UIViewController {
         $0.configuration = config
         $0.backgroundColor = Const.color.green
         $0.titleLabel?.font = .systemFont(ofSize: 17)
-        $0.layer.cornerRadius = 5
+        $0.layer.cornerRadius = 4
     }
     
     private let appleLoginButton = UIButton().then {
         var config = UIButton.Configuration.plain()
         config.title = "Apple 로그인"
-        config.baseForegroundColor = Const.color.black
+        config.baseForegroundColor = Const.color.black020
         config.image = Const.image.apple
         config.imagePadding = 80
         config.contentInsets = NSDirectionalEdgeInsets(top: 13, leading: 18, bottom: 14, trailing: 122)
@@ -56,8 +57,8 @@ class LoginEntryViewController: UIViewController {
         $0.backgroundColor = Const.color.white
         $0.titleLabel?.font = .systemFont(ofSize: 17)
         $0.layer.borderWidth = 1
-        $0.layer.borderColor = Const.color.black?.cgColor
-        $0.layer.cornerRadius = 5
+        $0.layer.borderColor = Const.color.black020?.cgColor
+        $0.layer.cornerRadius = 4
     }
     
     private let emailLoginButton = UIButton().then {
@@ -137,6 +138,7 @@ class LoginEntryViewController: UIViewController {
     // MARK: - @objc
     
     @objc func touchupEmailLoginButton() {
-        
+        let emailLoginViewController = EmailLoginViewController()
+        navigationController?.pushViewController(emailLoginViewController, animated: true)
     }
 }
