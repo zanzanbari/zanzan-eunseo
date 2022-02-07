@@ -8,9 +8,7 @@
 import UIKit
 
 import SnapKit
-
 import Then
-import Alamofire
 
 class LoginEntryViewController: UIViewController {
     
