@@ -8,13 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		072F8F8C76559E9C9E555ECA /* Pods_Auth_Practice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB8511A64937A83DB8EA021A /* Pods_Auth_Practice.framework */; };
+		E23B2AA727B258640038AE31 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = E23B2AA627B258610038AE31 /* Pretendard-Medium.otf */; };
+		E23B2AA827B258660038AE31 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = E23B2AA527B258610038AE31 /* Pretendard-Regular.otf */; };
+		E23B2AAB27B259D50038AE31 /* FontStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23B2AAA27B259D50038AE31 /* FontStyle.swift */; };
+		E23B2AAD27B25B570038AE31 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23B2AAC27B25B570038AE31 /* Image.swift */; };
+		E23B2AAF27B25B5E0038AE31 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23B2AAE27B25B5E0038AE31 /* Color.swift */; };
+		E23B2AB127B25B9C0038AE31 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23B2AB027B25B9C0038AE31 /* Font.swift */; };
+		E23B2AB327B2608C0038AE31 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E23B2AB227B2608C0038AE31 /* Pretendard-SemiBold.otf */; };
 		E25DC3F427AD077900AA1228 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DC3F327AD077900AA1228 /* AppDelegate.swift */; };
 		E25DC3F627AD077900AA1228 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DC3F527AD077900AA1228 /* SceneDelegate.swift */; };
 		E25DC3FD27AD077C00AA1228 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E25DC3FC27AD077C00AA1228 /* Assets.xcassets */; };
 		E25DC40027AD077C00AA1228 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E25DC3FE27AD077C00AA1228 /* LaunchScreen.storyboard */; };
 		E25DC40F27AD163B00AA1228 /* LoginEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DC40E27AD163B00AA1228 /* LoginEntryViewController.swift */; };
 		E25DC41127AD236B00AA1228 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E25DC41027AD236B00AA1228 /* Color.xcassets */; };
-		E25DC41427AD258000AA1228 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DC41327AD258000AA1228 /* Const.swift */; };
 		E25DC41827AD288800AA1228 /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DC41727AD288800AA1228 /* UIStackView+.swift */; };
 		E25DC41A27AD290100AA1228 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DC41927AD290100AA1228 /* UIView+.swift */; };
 		E25DC41C27AD3A5D00AA1228 /* EmailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DC41B27AD3A5D00AA1228 /* EmailLoginViewController.swift */; };
@@ -24,6 +30,13 @@
 		884DD30C4C17CAC97A4D88CC /* Pods-Auth-Practice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Auth-Practice.release.xcconfig"; path = "Target Support Files/Pods-Auth-Practice/Pods-Auth-Practice.release.xcconfig"; sourceTree = "<group>"; };
 		A160A08D2A6CF606E9142521 /* Pods-Auth-Practice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Auth-Practice.debug.xcconfig"; path = "Target Support Files/Pods-Auth-Practice/Pods-Auth-Practice.debug.xcconfig"; sourceTree = "<group>"; };
 		CB8511A64937A83DB8EA021A /* Pods_Auth_Practice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Auth_Practice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E23B2AA527B258610038AE31 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
+		E23B2AA627B258610038AE31 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
+		E23B2AAA27B259D50038AE31 /* FontStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontStyle.swift; sourceTree = "<group>"; };
+		E23B2AAC27B25B570038AE31 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		E23B2AAE27B25B5E0038AE31 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		E23B2AB027B25B9C0038AE31 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		E23B2AB227B2608C0038AE31 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		E25DC3F027AD077900AA1228 /* Auth-Practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Auth-Practice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E25DC3F327AD077900AA1228 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E25DC3F527AD077900AA1228 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -32,7 +45,6 @@
 		E25DC40127AD077C00AA1228 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E25DC40E27AD163B00AA1228 /* LoginEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEntryViewController.swift; sourceTree = "<group>"; };
 		E25DC41027AD236B00AA1228 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
-		E25DC41327AD258000AA1228 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		E25DC41727AD288800AA1228 /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
 		E25DC41927AD290100AA1228 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		E25DC41B27AD3A5D00AA1228 /* EmailLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +79,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E23B2AA427B258470038AE31 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				E23B2AA627B258610038AE31 /* Pretendard-Medium.otf */,
+				E23B2AA527B258610038AE31 /* Pretendard-Regular.otf */,
+				E23B2AB227B2608C0038AE31 /* Pretendard-SemiBold.otf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		E23B2AA927B259C10038AE31 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				E23B2AAA27B259D50038AE31 /* FontStyle.swift */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
 		E25DC3E727AD077900AA1228 = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +128,7 @@
 		E25DC40727AD0F8C00AA1228 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				E23B2AA927B259C10038AE31 /* DesignSystem */,
 				E25DC41627AD286A00AA1228 /* Extenstion */,
 				E25DC41527AD285F00AA1228 /* Constant */,
 			);
@@ -115,6 +146,7 @@
 		E25DC40927AD0FAC00AA1228 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				E23B2AA427B258470038AE31 /* Font */,
 				E25DC40C27AD104D00AA1228 /* Asset */,
 				E25DC40B27AD102B00AA1228 /* Storyboard */,
 				E25DC40A27AD100E00AA1228 /* Support */,
@@ -161,7 +193,9 @@
 		E25DC41527AD285F00AA1228 /* Constant */ = {
 			isa = PBXGroup;
 			children = (
-				E25DC41327AD258000AA1228 /* Const.swift */,
+				E23B2AAC27B25B570038AE31 /* Image.swift */,
+				E23B2AAE27B25B5E0038AE31 /* Color.swift */,
+				E23B2AB027B25B9C0038AE31 /* Font.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -237,7 +271,10 @@
 			files = (
 				E25DC40027AD077C00AA1228 /* LaunchScreen.storyboard in Resources */,
 				E25DC3FD27AD077C00AA1228 /* Assets.xcassets in Resources */,
+				E23B2AA827B258660038AE31 /* Pretendard-Regular.otf in Resources */,
+				E23B2AB327B2608C0038AE31 /* Pretendard-SemiBold.otf in Resources */,
 				E25DC41127AD236B00AA1228 /* Color.xcassets in Resources */,
+				E23B2AA727B258640038AE31 /* Pretendard-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,10 +328,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E25DC41A27AD290100AA1228 /* UIView+.swift in Sources */,
+				E23B2AAD27B25B570038AE31 /* Image.swift in Sources */,
+				E23B2AB127B25B9C0038AE31 /* Font.swift in Sources */,
 				E25DC41C27AD3A5D00AA1228 /* EmailLoginViewController.swift in Sources */,
+				E23B2AAF27B25B5E0038AE31 /* Color.swift in Sources */,
 				E25DC41827AD288800AA1228 /* UIStackView+.swift in Sources */,
 				E25DC3F427AD077900AA1228 /* AppDelegate.swift in Sources */,
-				E25DC41427AD258000AA1228 /* Const.swift in Sources */,
+				E23B2AAB27B259D50038AE31 /* FontStyle.swift in Sources */,
 				E25DC3F627AD077900AA1228 /* SceneDelegate.swift in Sources */,
 				E25DC40F27AD163B00AA1228 /* LoginEntryViewController.swift in Sources */,
 			);

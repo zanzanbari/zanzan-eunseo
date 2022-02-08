@@ -15,14 +15,14 @@ class EmailLoginViewController: UIViewController {
     // MARK: - Properties
     
     private let backButton = UIButton().then {
-        $0.setImage(Const.image.back, for: .normal)
+        $0.setImage(Image.back, for: .normal)
         $0.addTarget(self, action: #selector(touchupBackButton), for: .touchUpInside)
     }
     
     private let emailLoginLabel = UILabel().then {
         $0.text = "이메일 로그인"
-        $0.textColor = Const.color.black000
-        $0.font = .systemFont(ofSize: 23)
+        $0.textColor = Color.black000
+        $0.font = FontStyle.title1.font
     }
     
     private let emailTextField = UITextField().then {
@@ -41,7 +41,7 @@ class EmailLoginViewController: UIViewController {
     private let passwordDeleteButton = UIButton()
     
     private let showPasswordButton = UIButton().then {
-        $0.setImage(Const.image.lookInactive, for: .normal)
+        $0.setImage(Image.lookInactive, for: .normal)
         $0.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         $0.setContentCompressionResistancePriority(.required, for: .horizontal)
         $0.isHidden = true
@@ -50,16 +50,16 @@ class EmailLoginViewController: UIViewController {
     
     private let loginButton = UIButton().then {
         $0.setTitle("로그인", for: .normal)
-        $0.setTitleColor(Const.color.white, for: .normal)
-        $0.titleLabel?.font = .systemFont(ofSize: 17)
-        $0.backgroundColor = Const.color.black020
+        $0.setTitleColor(Color.white, for: .normal)
+        $0.titleLabel?.font = FontStyle.body3.font
+        $0.backgroundColor = Color.black020
         $0.layer.cornerRadius = 4
     }
     
     private let findPasswordButton = UIButton().then {
         $0.setTitle("비밀번호를 잊어버리셨나요?", for: .normal)
-        $0.setTitleColor(Const.color.gray, for: .normal)
-        $0.titleLabel?.font = .systemFont(ofSize: 15)
+        $0.setTitleColor(Color.gray, for: .normal)
+        $0.titleLabel?.font = FontStyle.body4.font
     }
     
     private lazy var emailStackView = UIStackView().then {
@@ -72,7 +72,7 @@ class EmailLoginViewController: UIViewController {
     
     private var isShowPasswordButtonSelected: Bool = false {
         didSet {
-            let image = isShowPasswordButtonSelected ? Const.image.lookActive : Const.image.lookInactive
+            let image = isShowPasswordButtonSelected ? Image.lookActive : Image.lookInactive
             showPasswordButton.setImage(image, for: .normal)
             passwordTextField.isSecureTextEntry = isShowPasswordButtonSelected ? false : true
         }
@@ -89,20 +89,22 @@ class EmailLoginViewController: UIViewController {
     // MARK: - InitUI
     
     private func configUI() {
-        view.backgroundColor = Const.color.white
+        view.backgroundColor = Color.white
         navigationController?.isNavigationBarHidden = true
         
         [emailTextField, passwordTextField].forEach {
-            $0.textColor = Const.color.black020
+            $0.font = FontStyle.body1.font
+            $0.textColor = Color.black020
+            $0.tintColor = Color.black020
             $0.delegate = self
         }
         
         [emailLine, passwordLine].forEach {
-            $0.backgroundColor = Const.color.grayC4
+            $0.backgroundColor = Color.grayC4
         }
         
         [emailDeleteButton, passwordDeleteButton].forEach {
-            $0.setImage(Const.image.delete, for: .normal)
+            $0.setImage(Image.delete, for: .normal)
             $0.setContentCompressionResistancePriority(.required, for: .horizontal)
             $0.isHidden = true
             $0.addTarget(self, action: #selector(touchupDeleteButton(_:)), for: .touchUpInside)
@@ -223,15 +225,15 @@ class EmailLoginViewController: UIViewController {
 
 extension EmailLoginViewController: UITextFieldDelegate {
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        setupTextField(textField, lineColor: Const.color.black200 ?? UIColor(), isEmpty: textField.text?.isEmpty)
+        setupTextField(textField, lineColor: Color.black200 ?? UIColor(), isEmpty: textField.text?.isEmpty)
         return true
     }
     
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
-        setupTextField(textField, lineColor: Const.color.grayC4 ?? UIColor(), isEmpty: nil)
+        setupTextField(textField, lineColor: Color.grayC4 ?? UIColor(), isEmpty: nil)
     }
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
-        setupTextField(textField, lineColor: Const.color.black200 ?? UIColor(), isEmpty: textField.text?.isEmpty)
+        setupTextField(textField, lineColor: Color.black200 ?? UIColor(), isEmpty: textField.text?.isEmpty)
     }
 }

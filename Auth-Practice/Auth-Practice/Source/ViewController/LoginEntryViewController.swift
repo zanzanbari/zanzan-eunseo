@@ -15,65 +15,65 @@ class LoginEntryViewController: UIViewController {
     // MARK: - Properties
     
     private let logoImageView = UIImageView().then {
-        $0.image = Const.image.logo
+        $0.image = Image.logo
     }
     
     private let kakaoLoginButton = UIButton().then {
         var config = UIButton.Configuration.plain()
         config.title = "카카오 로그인"
-        config.baseForegroundColor = Const.color.black020
-        config.image = Const.image.kakao
+        config.baseForegroundColor = Color.black020
+        config.image = Image.kakao
         config.imagePadding = 80
         config.contentInsets = NSDirectionalEdgeInsets(top: 13, leading: 18, bottom: 14, trailing: 122)
         $0.configuration = config
-        $0.backgroundColor = Const.color.yellow100
-        $0.titleLabel?.font = .systemFont(ofSize: 17)
+        $0.backgroundColor = Color.yellow100
+        $0.titleLabel?.font = FontStyle.body2.font
         $0.layer.cornerRadius = 4
     }
     
     private let naverLoginButton = UIButton().then {
         var config = UIButton.Configuration.plain()
         config.title = "네이버 로그인"
-        config.baseForegroundColor = Const.color.white
-        config.image = Const.image.naver
+        config.baseForegroundColor = Color.white
+        config.image = Image.naver
         config.imagePadding = 80
         config.contentInsets = NSDirectionalEdgeInsets(top: 13, leading: 18, bottom: 14, trailing: 122)
         $0.configuration = config
-        $0.backgroundColor = Const.color.green
-        $0.titleLabel?.font = .systemFont(ofSize: 17)
+        $0.backgroundColor = Color.green
+        $0.titleLabel?.font = FontStyle.body2.font
         $0.layer.cornerRadius = 4
     }
     
     private let appleLoginButton = UIButton().then {
         var config = UIButton.Configuration.plain()
         config.title = "Apple 로그인"
-        config.baseForegroundColor = Const.color.black020
-        config.image = Const.image.apple
+        config.baseForegroundColor = Color.black020
+        config.image = Image.apple
         config.imagePadding = 80
         config.contentInsets = NSDirectionalEdgeInsets(top: 13, leading: 18, bottom: 14, trailing: 122)
         $0.configuration = config
-        $0.backgroundColor = Const.color.white
-        $0.titleLabel?.font = .systemFont(ofSize: 17)
+        $0.backgroundColor = Color.white
+        $0.titleLabel?.font = FontStyle.body2.font
         $0.layer.borderWidth = 1
-        $0.layer.borderColor = Const.color.black020?.cgColor
+        $0.layer.borderColor = Color.black020?.cgColor
         $0.layer.cornerRadius = 4
     }
     
     private let emailLoginButton = UIButton().then {
         $0.setTitle("이메일 로그인", for: .normal)
-        $0.setTitleColor(Const.color.darkGray, for: .normal)
-        $0.titleLabel?.font = .systemFont(ofSize: 15)
+        $0.setTitleColor(Color.darkGray, for: .normal)
+        $0.titleLabel?.font = FontStyle.body4.font
         $0.addTarget(self, action: #selector(touchupEmailLoginButton), for: .touchUpInside)
     }
     
     private let signupButton = UIButton().then {
         $0.setTitle("가입하기", for: .normal)
-        $0.setTitleColor(Const.color.darkGray, for: .normal)
-        $0.titleLabel?.font = .systemFont(ofSize: 15)
+        $0.setTitleColor(Color.darkGray, for: .normal)
+        $0.titleLabel?.font = FontStyle.body4.font
     }
     
     private let verticalLine = UIView().then {
-        $0.backgroundColor = Const.color.gray
+        $0.backgroundColor = Color.gray
     }
     
     private lazy var socialLoginStackView = UIStackView().then {
@@ -95,7 +95,7 @@ class LoginEntryViewController: UIViewController {
     // MARK: - InitUI
     
     private func configUI() {
-        view.backgroundColor = Const.color.white
+        view.backgroundColor = Color.white
     }
     
     private func setupLayout() {
