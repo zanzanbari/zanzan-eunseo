@@ -15,6 +15,7 @@
 		E23B2AAF27B25B5E0038AE31 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23B2AAE27B25B5E0038AE31 /* Color.swift */; };
 		E23B2AB127B25B9C0038AE31 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23B2AB027B25B9C0038AE31 /* Font.swift */; };
 		E23B2AB327B2608C0038AE31 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E23B2AB227B2608C0038AE31 /* Pretendard-SemiBold.otf */; };
+		E23B2AB727B26AD20038AE31 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23B2AB627B26AD20038AE31 /* UserModel.swift */; };
 		E25DC3F427AD077900AA1228 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DC3F327AD077900AA1228 /* AppDelegate.swift */; };
 		E25DC3F627AD077900AA1228 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DC3F527AD077900AA1228 /* SceneDelegate.swift */; };
 		E25DC3FD27AD077C00AA1228 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E25DC3FC27AD077C00AA1228 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 		E23B2AAE27B25B5E0038AE31 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		E23B2AB027B25B9C0038AE31 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		E23B2AB227B2608C0038AE31 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
+		E23B2AB627B26AD20038AE31 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		E25DC3F027AD077900AA1228 /* Auth-Practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Auth-Practice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E25DC3F327AD077900AA1228 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E25DC3F527AD077900AA1228 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +99,14 @@
 			path = DesignSystem;
 			sourceTree = "<group>";
 		};
+		E23B2AB527B26AC50038AE31 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E23B2AB627B26AD20038AE31 /* UserModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		E25DC3E727AD077900AA1228 = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +148,7 @@
 		E25DC40827AD0F9E00AA1228 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				E23B2AB527B26AC50038AE31 /* Model */,
 				E25DC40D27AD15C200AA1228 /* ViewController */,
 			);
 			path = Source;
@@ -337,6 +348,7 @@
 				E23B2AAB27B259D50038AE31 /* FontStyle.swift in Sources */,
 				E25DC3F627AD077900AA1228 /* SceneDelegate.swift in Sources */,
 				E25DC40F27AD163B00AA1228 /* LoginEntryViewController.swift in Sources */,
+				E23B2AB727B26AD20038AE31 /* UserModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
