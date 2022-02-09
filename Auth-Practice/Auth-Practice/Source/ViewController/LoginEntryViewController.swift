@@ -18,45 +18,11 @@ class LoginEntryViewController: UIViewController {
         $0.image = Image.logo
     }
     
-    private let kakaoLoginButton = UIButton().then {
-        var config = UIButton.Configuration.plain()
-        config.title = "카카오 로그인"
-        config.baseForegroundColor = Color.black020
-        config.image = Image.kakao
-        config.imagePadding = 80
-        config.contentInsets = NSDirectionalEdgeInsets(top: 13, leading: 18, bottom: 14, trailing: 122)
-        $0.configuration = config
-        $0.backgroundColor = Color.yellow100
-        $0.titleLabel?.font = FontStyle.body2.font
-        $0.layer.cornerRadius = 4
-    }
-    
-    private let naverLoginButton = UIButton().then {
-        var config = UIButton.Configuration.plain()
-        config.title = "네이버 로그인"
-        config.baseForegroundColor = Color.white
-        config.image = Image.naver
-        config.imagePadding = 80
-        config.contentInsets = NSDirectionalEdgeInsets(top: 13, leading: 18, bottom: 14, trailing: 122)
-        $0.configuration = config
-        $0.backgroundColor = Color.green
-        $0.titleLabel?.font = FontStyle.body2.font
-        $0.layer.cornerRadius = 4
-    }
-    
-    private let appleLoginButton = UIButton().then {
-        var config = UIButton.Configuration.plain()
-        config.title = "Apple 로그인"
-        config.baseForegroundColor = Color.black020
-        config.image = Image.apple
-        config.imagePadding = 80
-        config.contentInsets = NSDirectionalEdgeInsets(top: 13, leading: 18, bottom: 14, trailing: 122)
-        $0.configuration = config
-        $0.backgroundColor = Color.white
-        $0.titleLabel?.font = FontStyle.body2.font
+    private let kakaoLoginButton = AuthButton(authType: .kakao)
+    private let naverLoginButton = AuthButton(authType: .naver)
+    private let appleLoginButton = AuthButton(authType: .apple).then {
         $0.layer.borderWidth = 1
         $0.layer.borderColor = Color.black020?.cgColor
-        $0.layer.cornerRadius = 4
     }
     
     private let emailLoginButton = UIButton().then {
@@ -79,7 +45,7 @@ class LoginEntryViewController: UIViewController {
     private lazy var socialLoginStackView = UIStackView().then {
         $0.axis = .vertical
         $0.alignment = .fill
-        $0.distribution = .fill
+        $0.distribution = .fillEqually
         $0.spacing = 15
         $0.addArrangedSubviews([kakaoLoginButton, naverLoginButton, appleLoginButton])
     }
@@ -113,6 +79,7 @@ class LoginEntryViewController: UIViewController {
         socialLoginStackView.snp.makeConstraints {
             $0.top.equalTo(logoImageView.snp.bottom).offset(159)
             $0.leading.trailing.equalToSuperview().inset(20)
+            $0.height.equalTo(186)
         }
         
         emailLoginButton.snp.makeConstraints {
