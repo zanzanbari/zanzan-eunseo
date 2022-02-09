@@ -25,6 +25,7 @@
 		E25DC41827AD288800AA1228 /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DC41727AD288800AA1228 /* UIStackView+.swift */; };
 		E25DC41A27AD290100AA1228 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DC41927AD290100AA1228 /* UIView+.swift */; };
 		E25DC41C27AD3A5D00AA1228 /* EmailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DC41B27AD3A5D00AA1228 /* EmailLoginViewController.swift */; };
+		E2E8483827B3C91B00EFAAA2 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E8483727B3C91B00EFAAA2 /* AuthButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		E25DC41727AD288800AA1228 /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
 		E25DC41927AD290100AA1228 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		E25DC41B27AD3A5D00AA1228 /* EmailLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginViewController.swift; sourceTree = "<group>"; };
+		E2E8483727B3C91B00EFAAA2 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				E23B2AAA27B259D50038AE31 /* FontStyle.swift */,
+				E2E8483727B3C91B00EFAAA2 /* AuthButton.swift */,
 			);
 			path = DesignSystem;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E25DC41A27AD290100AA1228 /* UIView+.swift in Sources */,
+				E2E8483827B3C91B00EFAAA2 /* AuthButton.swift in Sources */,
 				E23B2AAD27B25B570038AE31 /* Image.swift in Sources */,
 				E23B2AB127B25B9C0038AE31 /* Font.swift in Sources */,
 				E25DC41C27AD3A5D00AA1228 /* EmailLoginViewController.swift in Sources */,
