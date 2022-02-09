@@ -11,8 +11,18 @@ import SnapKit
 import Then
 
 class EmailLoginViewController: UIViewController {
+    
+    enum Const {
+        static let invalidEmail = "올바르지 않은 이메일 형식입니다"
+        static let notExistEmail = "존재하지 않는 이메일입니다"
+        static let inputEmail = "이메일을 입력해주세요"
+        static let checkPassword = "비밀번호를 확인해주세요"
+        static let inputPassword = "비밀번호를 입력해주세요"
+    }
 
     // MARK: - Properties
+    
+    private var userModel = UserModel()
     
     private let backButton = UIButton().then {
         $0.setImage(Image.back, for: .normal)
@@ -26,16 +36,19 @@ class EmailLoginViewController: UIViewController {
     }
     
     private let emailTextField = UITextField().then {
-        $0.placeholder = "이메일"
+        $0.attributedPlaceholder = NSAttributedString(string: "이메일", attributes: [NSAttributedString.Key.foregroundColor : Color.gray ?? UIColor()])
     }
     
     private let passwordTextField = UITextField().then {
-        $0.placeholder = "비밀번호"
+        $0.attributedPlaceholder = NSAttributedString(string: "비밀번호", attributes: [NSAttributedString.Key.foregroundColor : Color.gray ?? UIColor()])
         $0.isSecureTextEntry = true
     }
     
     private let emailLine = UIView()
     private let passwordLine = UIView()
+    
+    private let emailWarningLabel = UILabel()
+    private let passwordWarningLabel = UILabel()
     
     private let emailDeleteButton = UIButton()
     private let passwordDeleteButton = UIButton()
@@ -54,6 +67,7 @@ class EmailLoginViewController: UIViewController {
         $0.titleLabel?.font = FontStyle.body3.font
         $0.backgroundColor = Color.black020
         $0.layer.cornerRadius = 4
+        $0.addTarget(self, action: #selector(touchupLoginButton), for: .touchUpInside)
     }
     
     private let findPasswordButton = UIButton().then {
@@ -103,6 +117,12 @@ class EmailLoginViewController: UIViewController {
             $0.backgroundColor = Color.grayC4
         }
         
+        [emailWarningLabel, passwordWarningLabel].forEach {
+            $0.textColor = Color.red
+            $0.font = FontStyle.body5.font
+            $0.isHidden = true
+        }
+        
         [emailDeleteButton, passwordDeleteButton].forEach {
             $0.setImage(Image.delete, for: .normal)
             $0.setContentCompressionResistancePriority(.required, for: .horizontal)
@@ -124,6 +144,8 @@ class EmailLoginViewController: UIViewController {
                           passwordStackView,
                           emailLine,
                           passwordLine,
+                          emailWarningLabel,
+                          passwordWarningLabel,
                           loginButton,
                           findPasswordButton])
         
@@ -150,6 +172,11 @@ class EmailLoginViewController: UIViewController {
             $0.height.equalTo(1)
         }
         
+        emailWarningLabel.snp.makeConstraints {
+            $0.top.equalTo(emailLine.snp.bottom).offset(4)
+            $0.leading.equalToSuperview().inset(28)
+        }
+        
         passwordStackView.snp.makeConstraints {
             $0.top.equalTo(emailLine.snp.bottom).offset(42)
             $0.leading.equalToSuperview().inset(28)
@@ -161,6 +188,11 @@ class EmailLoginViewController: UIViewController {
             $0.leading.equalToSuperview().inset(20)
             $0.trailing.equalTo(passwordStackView)
             $0.height.equalTo(1)
+        }
+        
+        passwordWarningLabel.snp.makeConstraints {
+            $0.top.equalTo(passwordLine.snp.bottom).offset(4)
+            $0.leading.equalToSuperview().inset(28)
         }
         
         loginButton.snp.makeConstraints {
@@ -193,35 +225,98 @@ class EmailLoginViewController: UIViewController {
         isShowPasswordButtonSelected.toggle()
     }
     
+    @objc func touchupLoginButton() {
+        resignTextFieldFirstResponder()
+        
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        
+        if email.isEmpty {
+            updateWarning(emailTextField, message: Const.inputEmail)
+            setupTextField(passwordTextField, lineColor: Color.grayC4 ?? UIColor(), isEmpty: nil)
+        } else if !userModel.isValidEmail(email: email) {
+            updateWarning(emailTextField, message: Const.invalidEmail)
+            setupTextField(passwordTextField, lineColor: Color.grayC4 ?? UIColor(), isEmpty: nil)
+            return
+        }
+        
+        if password.isEmpty {
+            updateWarning(passwordTextField, message: Const.inputPassword)
+        } else if !userModel.isValidPassword(password: password) {
+            updateWarning(passwordTextField, message: Const.checkPassword)
+            return
+        } else {
+            setupTextField(passwordTextField, lineColor: Color.grayC4 ?? UIColor(), isEmpty: nil)
+        }
+    }
+    
     // MARK: - Custom Method
     
     private func setupTextField(_ textField: UITextField, lineColor: UIColor, isEmpty: Bool?) {
         switch textField {
         case emailTextField:
-            if let isEmailEmpty = isEmpty {
-                emailDeleteButton.isHidden = isEmailEmpty ? true : false
+            if let isEmailEmpty = isEmpty, !isEmailEmpty {
+                emailDeleteButton.isHidden = false
+                if emailLine.backgroundColor == Color.red {
+                    return
+                }
             } else {
                 emailDeleteButton.isHidden = true
+                updateWarning(emailTextField, message: nil)
             }
             emailLine.backgroundColor = lineColor
-            return
         case passwordTextField:
-            if let isPasswordEmpty = isEmpty {
+            if let isPasswordEmpty = isEmpty, !isPasswordEmpty {
                 [passwordDeleteButton, showPasswordButton].forEach {
-                    $0.isHidden = isPasswordEmpty ? true : false
+                    $0.isHidden = false
+                }
+                if passwordLine.backgroundColor == Color.red {
+                    return
                 }
             } else {
                 [passwordDeleteButton, showPasswordButton].forEach {
                     $0.isHidden = true
                 }
+                updateWarning(passwordTextField, message: nil)
             }
             passwordLine.backgroundColor = lineColor
-            return
         default:
             return
         }
     }
+    
+    private func updateWarning(_ textField: UITextField, message: String?) {
+        switch textField {
+        case emailTextField:
+            guard let message = message else {
+                emailLine.backgroundColor = Color.black200
+                emailWarningLabel.isHidden = true
+                return
+            }
+            emailLine.backgroundColor = Color.red
+            emailWarningLabel.isHidden = false
+            emailWarningLabel.text = message
+        case passwordTextField:
+            guard let message = message else {
+                passwordLine.backgroundColor = Color.black200
+                passwordWarningLabel.isHidden = true
+                return
+            }
+            passwordLine.backgroundColor = Color.red
+            passwordWarningLabel.isHidden = false
+            passwordWarningLabel.text = message
+        default:
+            return
+        }
+    }
+    
+    private func resignTextFieldFirstResponder() {
+        emailTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+    }
 }
+
+//MARK: - UITextFieldDelegate
 
 extension EmailLoginViewController: UITextFieldDelegate {
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
@@ -231,6 +326,10 @@ extension EmailLoginViewController: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
         setupTextField(textField, lineColor: Color.grayC4 ?? UIColor(), isEmpty: nil)
+        if let email = emailTextField.text, !email.isEmpty, !userModel.isValidEmail(email: email) {
+            updateWarning(emailTextField, message: Const.invalidEmail)
+            return
+        }
     }
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
