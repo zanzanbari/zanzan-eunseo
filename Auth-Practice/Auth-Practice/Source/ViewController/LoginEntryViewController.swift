@@ -72,7 +72,6 @@ class LoginEntryViewController: UIViewController {
                           signupButton])
         
         logoImageView.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide).inset(159)
             $0.centerX.equalToSuperview()
         }
         
@@ -88,6 +87,7 @@ class LoginEntryViewController: UIViewController {
         }
         
         verticalLine.snp.makeConstraints {
+            $0.bottom.equalTo(view.safeAreaLayoutGuide).inset(30)
             $0.centerY.equalTo(emailLoginButton.snp.centerY)
             $0.centerX.equalToSuperview()
             $0.height.equalTo(20)
