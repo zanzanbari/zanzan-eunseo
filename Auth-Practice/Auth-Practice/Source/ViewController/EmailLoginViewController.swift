@@ -228,25 +228,14 @@ class EmailLoginViewController: UIViewController {
     @objc func touchupLoginButton() {
         resignTextFieldFirstResponder()
         
-        guard let email = emailTextField.text else { return }
-        guard let password = passwordTextField.text else { return }
-        
-        if email.isEmpty {
+        if !emailTextField.hasText, !passwordTextField.hasText {
             updateWarning(emailTextField, message: Const.inputEmail)
-            setupTextField(passwordTextField, lineColor: Color.grayC4 ?? UIColor(), isEmpty: nil)
-        } else if !userModel.isValidEmail(email: email) {
+            updateWarning(passwordTextField, message: Const.inputPassword)
+        } else if !userModel.isValidEmail(email: emailTextField.text ?? "") {
             updateWarning(emailTextField, message: Const.invalidEmail)
             setupTextField(passwordTextField, lineColor: Color.grayC4 ?? UIColor(), isEmpty: nil)
-            return
-        }
-        
-        if password.isEmpty {
-            updateWarning(passwordTextField, message: Const.inputPassword)
-        } else if !userModel.isValidPassword(password: password) {
+        } else if !userModel.isValidPassword(password: passwordTextField.text ?? "") {
             updateWarning(passwordTextField, message: Const.checkPassword)
-            return
-        } else {
-            setupTextField(passwordTextField, lineColor: Color.grayC4 ?? UIColor(), isEmpty: nil)
         }
     }
     
@@ -326,7 +315,7 @@ extension EmailLoginViewController: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
         setupTextField(textField, lineColor: Color.grayC4 ?? UIColor(), isEmpty: nil)
-        if let email = emailTextField.text, !email.isEmpty, !userModel.isValidEmail(email: email) {
+        if emailTextField.hasText, !userModel.isValidEmail(email: emailTextField.text ?? "") {
             updateWarning(emailTextField, message: Const.invalidEmail)
             return
         }
