@@ -19,10 +19,15 @@ class EmailLoginViewController: UIViewController {
         static let checkPassword = "비밀번호를 확인해주세요"
         static let inputPassword = "비밀번호를 입력해주세요"
     }
+    
+    enum NetworkErrorMessage {
+        static let notExistUser = "회원가입이 필요합니다."
+        static let incorrectPassword = "비밀번호가 일치하지 않습니다."
+    }
 
     // MARK: - Properties
     
-    private var userModel = UserModel()
+    private var loginData = LoginModel()
     
     private let backButton = UIButton().then {
         $0.setImage(Image.back, for: .normal)
@@ -231,11 +236,26 @@ class EmailLoginViewController: UIViewController {
         if !emailTextField.hasText, !passwordTextField.hasText {
             updateWarning(emailTextField, message: Const.inputEmail)
             updateWarning(passwordTextField, message: Const.inputPassword)
-        } else if !userModel.isValidEmail(email: emailTextField.text ?? "") {
+        } else if !loginData.isValidEmail(email: emailTextField.text ?? "") {
             updateWarning(emailTextField, message: Const.invalidEmail)
             setupTextField(passwordTextField, lineColor: Color.grayC4 ?? UIColor(), isEmpty: nil)
-        } else if !userModel.isValidPassword(password: passwordTextField.text ?? "") {
+        } else if !loginData.isValidPassword(password: passwordTextField.text ?? "") {
             updateWarning(passwordTextField, message: Const.checkPassword)
+        } else {
+            loginData.email = emailTextField.text
+            loginData.password = passwordTextField.text
+            LoginAPI.shared.postLogin(userData: loginData) { result in
+                switch result {
+                case .success(let data):
+                    guard let result = data as? BaseResponse<UserModel>, let userData = result.data else { return }
+                    print(userData.nickname)
+                case .requestErr(let message):
+                    guard let errorMessage = message as? String else { return }
+                    self.handleRequestError(errorMessage: errorMessage)
+                case .pathErr, .serverErr, .networkFail:
+                    print(self)
+                }
+            }
         }
     }
     
@@ -303,6 +323,14 @@ class EmailLoginViewController: UIViewController {
         emailTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
     }
+    
+    private func handleRequestError(errorMessage: String) {
+        if errorMessage == NetworkErrorMessage.incorrectPassword {
+            updateWarning(passwordTextField, message: Const.checkPassword)
+        } else if errorMessage == NetworkErrorMessage.notExistUser {
+            updateWarning(emailTextField, message: Const.notExistEmail)
+        }
+    }
 }
 
 //MARK: - UITextFieldDelegate
@@ -315,7 +343,7 @@ extension EmailLoginViewController: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
         setupTextField(textField, lineColor: Color.grayC4 ?? UIColor(), isEmpty: nil)
-        if emailTextField.hasText, !userModel.isValidEmail(email: emailTextField.text ?? "") {
+        if emailTextField.hasText, !loginData.isValidEmail(email: emailTextField.text ?? "") {
             updateWarning(emailTextField, message: Const.invalidEmail)
             return
         }
