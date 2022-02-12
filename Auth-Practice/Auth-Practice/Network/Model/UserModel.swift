@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-struct UserModel {
+struct UserModel: Codable {
     var email: String?
     var password: String?
     

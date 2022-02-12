@@ -26,6 +26,9 @@
 		E25DC41A27AD290100AA1228 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DC41927AD290100AA1228 /* UIView+.swift */; };
 		E25DC41C27AD3A5D00AA1228 /* EmailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DC41B27AD3A5D00AA1228 /* EmailLoginViewController.swift */; };
 		E2E8483827B3C91B00EFAAA2 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E8483727B3C91B00EFAAA2 /* AuthButton.swift */; };
+		E2E8483E27B6491200EFAAA2 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E8483D27B6491200EFAAA2 /* BaseResponse.swift */; };
+		E2E8484027B64AFB00EFAAA2 /* NetworkCostant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E8483F27B64AFB00EFAAA2 /* NetworkCostant.swift */; };
+		E2E8484727B693A400EFAAA2 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E8484627B693A400EFAAA2 /* NetworkResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +55,9 @@
 		E25DC41927AD290100AA1228 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		E25DC41B27AD3A5D00AA1228 /* EmailLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginViewController.swift; sourceTree = "<group>"; };
 		E2E8483727B3C91B00EFAAA2 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
+		E2E8483D27B6491200EFAAA2 /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
+		E2E8483F27B64AFB00EFAAA2 /* NetworkCostant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCostant.swift; sourceTree = "<group>"; };
+		E2E8484627B693A400EFAAA2 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,14 +108,6 @@
 			path = DesignSystem;
 			sourceTree = "<group>";
 		};
-		E23B2AB527B26AC50038AE31 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				E23B2AB627B26AD20038AE31 /* UserModel.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		E25DC3E727AD077900AA1228 = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +129,7 @@
 		E25DC3F227AD077900AA1228 /* Auth-Practice */ = {
 			isa = PBXGroup;
 			children = (
+				E2E8483927B5830400EFAAA2 /* Network */,
 				E25DC40727AD0F8C00AA1228 /* Global */,
 				E25DC40827AD0F9E00AA1228 /* Source */,
 				E25DC40927AD0FAC00AA1228 /* Resource */,
@@ -151,7 +150,6 @@
 		E25DC40827AD0F9E00AA1228 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				E23B2AB527B26AC50038AE31 /* Model */,
 				E25DC40D27AD15C200AA1228 /* ViewController */,
 			);
 			path = Source;
@@ -221,6 +219,49 @@
 				E25DC41927AD290100AA1228 /* UIView+.swift */,
 			);
 			path = Extenstion;
+			sourceTree = "<group>";
+		};
+		E2E8483927B5830400EFAAA2 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				E2E8483C27B6489000EFAAA2 /* Base */,
+				E2E8483B27B6488600EFAAA2 /* Model */,
+				E2E8484127B64CB600EFAAA2 /* API */,
+				E2E8483A27B6477500EFAAA2 /* APIService */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		E2E8483A27B6477500EFAAA2 /* APIService */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = APIService;
+			sourceTree = "<group>";
+		};
+		E2E8483B27B6488600EFAAA2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E23B2AB627B26AD20038AE31 /* UserModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E2E8483C27B6489000EFAAA2 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				E2E8483D27B6491200EFAAA2 /* BaseResponse.swift */,
+				E2E8483F27B64AFB00EFAAA2 /* NetworkCostant.swift */,
+				E2E8484627B693A400EFAAA2 /* NetworkResult.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		E2E8484127B64CB600EFAAA2 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -341,6 +382,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2E8484727B693A400EFAAA2 /* NetworkResult.swift in Sources */,
 				E25DC41A27AD290100AA1228 /* UIView+.swift in Sources */,
 				E2E8483827B3C91B00EFAAA2 /* AuthButton.swift in Sources */,
 				E23B2AAD27B25B570038AE31 /* Image.swift in Sources */,
@@ -348,11 +390,13 @@
 				E25DC41C27AD3A5D00AA1228 /* EmailLoginViewController.swift in Sources */,
 				E23B2AAF27B25B5E0038AE31 /* Color.swift in Sources */,
 				E25DC41827AD288800AA1228 /* UIStackView+.swift in Sources */,
+				E2E8484027B64AFB00EFAAA2 /* NetworkCostant.swift in Sources */,
 				E25DC3F427AD077900AA1228 /* AppDelegate.swift in Sources */,
 				E23B2AAB27B259D50038AE31 /* FontStyle.swift in Sources */,
 				E25DC3F627AD077900AA1228 /* SceneDelegate.swift in Sources */,
 				E25DC40F27AD163B00AA1228 /* LoginEntryViewController.swift in Sources */,
 				E23B2AB727B26AD20038AE31 /* UserModel.swift in Sources */,
+				E2E8483E27B6491200EFAAA2 /* BaseResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
