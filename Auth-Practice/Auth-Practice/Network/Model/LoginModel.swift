@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-struct UserModel {
+struct LoginModel: Codable {
     var email: String?
     var password: String?
     
@@ -19,7 +19,7 @@ struct UserModel {
     }
     
     func isValidPassword(password: String) -> Bool {
-        let passwordRegex = "^(?=.*[A-Za-z])(?=.*[0-9]).{8,}$"
+        let passwordRegex = "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!_@$%^&+=]).{6,}$"
         let passwordPredicate = NSPredicate(format: "SELF MATCHES %@", passwordRegex)
         return passwordPredicate.evaluate(with: password)
     }
