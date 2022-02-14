@@ -242,24 +242,32 @@ class EmailLoginViewController: UIViewController {
         } else if !loginData.isValidPassword(password: passwordTextField.text ?? "") {
             updateWarning(passwordTextField, message: Const.checkPassword)
         } else {
-            loginData.email = emailTextField.text
-            loginData.password = passwordTextField.text
-            LoginAPI.shared.postLogin(userData: loginData) { result in
-                switch result {
-                case .success(let data):
-                    guard let result = data as? BaseResponse<UserModel>, let userData = result.data else { return }
-                    print(userData.nickname)
-                case .requestErr(let message):
-                    guard let errorMessage = message as? String else { return }
-                    self.handleRequestError(errorMessage: errorMessage)
-                case .pathErr, .serverErr, .networkFail:
-                    print(self)
-                }
-            }
+            login(email: emailTextField.text ?? "", password: passwordTextField.text ?? "")
         }
     }
     
     // MARK: - Custom Method
+    
+    private func login(email: String, password: String) {
+        loginData.email = email
+        loginData.password = password
+        
+        LoginAPI.shared.postLogin(userData: loginData) { result in
+            switch result {
+            case .success(let data):
+                guard let result = data as? BaseResponse<UserModel>, let userData = result.data else { return }
+                
+                let homeViewController = HomeViewController()
+                homeViewController.nickname = userData.nickname
+                self.navigationController?.pushViewController(homeViewController, animated: true)
+            case .requestErr(let message):
+                guard let errorMessage = message as? String else { return }
+                self.handleRequestError(errorMessage: errorMessage)
+            case .pathErr, .serverErr, .networkFail:
+                print(self)
+            }
+        }
+    }
     
     private func setupTextField(_ textField: UITextField, lineColor: UIColor, isEmpty: Bool?) {
         switch textField {

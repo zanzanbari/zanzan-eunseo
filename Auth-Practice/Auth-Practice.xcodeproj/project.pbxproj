@@ -25,6 +25,7 @@
 		E25DC41827AD288800AA1228 /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DC41727AD288800AA1228 /* UIStackView+.swift */; };
 		E25DC41A27AD290100AA1228 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DC41927AD290100AA1228 /* UIView+.swift */; };
 		E25DC41C27AD3A5D00AA1228 /* EmailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DC41B27AD3A5D00AA1228 /* EmailLoginViewController.swift */; };
+		E293653727BA55110021BB63 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E293653627BA55110021BB63 /* HomeViewController.swift */; };
 		E29EB0BD27B80B8400243F3B /* LoginAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29EB0BC27B80B8400243F3B /* LoginAPI.swift */; };
 		E29EB0BF27B80B8F00243F3B /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29EB0BE27B80B8F00243F3B /* LoginService.swift */; };
 		E29EB0C127B8146200243F3B /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29EB0C027B8146200243F3B /* UserModel.swift */; };
@@ -57,6 +58,7 @@
 		E25DC41727AD288800AA1228 /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
 		E25DC41927AD290100AA1228 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		E25DC41B27AD3A5D00AA1228 /* EmailLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginViewController.swift; sourceTree = "<group>"; };
+		E293653627BA55110021BB63 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E29EB0BC27B80B8400243F3B /* LoginAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAPI.swift; sourceTree = "<group>"; };
 		E29EB0BE27B80B8F00243F3B /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		E29EB0C027B8146200243F3B /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 			children = (
 				E25DC40E27AD163B00AA1228 /* LoginEntryViewController.swift */,
 				E25DC41B27AD3A5D00AA1228 /* EmailLoginViewController.swift */,
+				E293653627BA55110021BB63 /* HomeViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 			files = (
 				E2E8484727B693A400EFAAA2 /* NetworkResult.swift in Sources */,
 				E29EB0BD27B80B8400243F3B /* LoginAPI.swift in Sources */,
+				E293653727BA55110021BB63 /* HomeViewController.swift in Sources */,
 				E25DC41A27AD290100AA1228 /* UIView+.swift in Sources */,
 				E2E8483827B3C91B00EFAAA2 /* AuthButton.swift in Sources */,
 				E23B2AAD27B25B570038AE31 /* Image.swift in Sources */,

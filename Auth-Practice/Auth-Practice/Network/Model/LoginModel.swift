@@ -19,7 +19,7 @@ struct LoginModel: Codable {
     }
     
     func isValidPassword(password: String) -> Bool {
-        let passwordRegex = "^[a-zA-Z0-9]{6,}$"
+        let passwordRegex = "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!_@$%^&+=]).{6,}$"
         let passwordPredicate = NSPredicate(format: "SELF MATCHES %@", passwordRegex)
         return passwordPredicate.evaluate(with: password)
     }
