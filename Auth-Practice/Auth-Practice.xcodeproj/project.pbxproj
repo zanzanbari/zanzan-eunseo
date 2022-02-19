@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		072F8F8C76559E9C9E555ECA /* Pods_Auth_Practice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB8511A64937A83DB8EA021A /* Pods_Auth_Practice.framework */; };
+		E2236DEB27C0C72B0034EEC7 /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2236DEA27C0C72B0034EEC7 /* UserDefaultsKey.swift */; };
+		E2236DED27C0E8B30034EEC7 /* SocialLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2236DEC27C0E8B30034EEC7 /* SocialLoginModel.swift */; };
 		E23B2AA727B258640038AE31 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = E23B2AA627B258610038AE31 /* Pretendard-Medium.otf */; };
 		E23B2AA827B258660038AE31 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = E23B2AA527B258610038AE31 /* Pretendard-Regular.otf */; };
 		E23B2AAB27B259D50038AE31 /* FontStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23B2AAA27B259D50038AE31 /* FontStyle.swift */; };
@@ -39,6 +41,8 @@
 		884DD30C4C17CAC97A4D88CC /* Pods-Auth-Practice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Auth-Practice.release.xcconfig"; path = "Target Support Files/Pods-Auth-Practice/Pods-Auth-Practice.release.xcconfig"; sourceTree = "<group>"; };
 		A160A08D2A6CF606E9142521 /* Pods-Auth-Practice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Auth-Practice.debug.xcconfig"; path = "Target Support Files/Pods-Auth-Practice/Pods-Auth-Practice.debug.xcconfig"; sourceTree = "<group>"; };
 		CB8511A64937A83DB8EA021A /* Pods_Auth_Practice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Auth_Practice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2236DEA27C0C72B0034EEC7 /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
+		E2236DEC27C0E8B30034EEC7 /* SocialLoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLoginModel.swift; sourceTree = "<group>"; };
 		E23B2AA527B258610038AE31 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
 		E23B2AA627B258610038AE31 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		E23B2AAA27B259D50038AE31 /* FontStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontStyle.swift; sourceTree = "<group>"; };
@@ -217,6 +221,7 @@
 				E23B2AAC27B25B570038AE31 /* Image.swift */,
 				E23B2AAE27B25B5E0038AE31 /* Color.swift */,
 				E23B2AB027B25B9C0038AE31 /* Font.swift */,
+				E2236DEA27C0C72B0034EEC7 /* UserDefaultsKey.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -254,6 +259,7 @@
 			children = (
 				E23B2AB627B26AD20038AE31 /* LoginModel.swift */,
 				E29EB0C027B8146200243F3B /* UserModel.swift */,
+				E2236DEC27C0E8B30034EEC7 /* SocialLoginModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -402,8 +408,10 @@
 				E23B2AAD27B25B570038AE31 /* Image.swift in Sources */,
 				E29EB0C127B8146200243F3B /* UserModel.swift in Sources */,
 				E23B2AB127B25B9C0038AE31 /* Font.swift in Sources */,
+				E2236DEB27C0C72B0034EEC7 /* UserDefaultsKey.swift in Sources */,
 				E25DC41C27AD3A5D00AA1228 /* EmailLoginViewController.swift in Sources */,
 				E23B2AAF27B25B5E0038AE31 /* Color.swift in Sources */,
+				E2236DED27C0E8B30034EEC7 /* SocialLoginModel.swift in Sources */,
 				E25DC41827AD288800AA1228 /* UIStackView+.swift in Sources */,
 				E2E8484027B64AFB00EFAAA2 /* NetworkCostant.swift in Sources */,
 				E25DC3F427AD077900AA1228 /* AppDelegate.swift in Sources */,

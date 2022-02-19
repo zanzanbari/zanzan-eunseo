@@ -33,6 +33,17 @@ final class LoginAPI {
             }
         }
     }
+    
+    func postSocialLogin(socialLoginData: SocialLoginModel, completion: @escaping (NetworkResult<Any>) -> ()) {
+        loginProvider.request(.socialLogin(param: socialLoginData)) { result in
+            switch result {
+            case .success(let response):
+                completion(self.judgeLoginStatus(by: response.statusCode, response.data))
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
 }
 
 extension LoginAPI {

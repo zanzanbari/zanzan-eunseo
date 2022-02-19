@@ -10,6 +10,8 @@ import UIKit
 import SnapKit
 import Then
 
+import KakaoSDKUser
+
 class LoginEntryViewController: UIViewController {
     
     // MARK: - Properties
@@ -18,8 +20,12 @@ class LoginEntryViewController: UIViewController {
         $0.image = Image.logo
     }
     
-    private let kakaoLoginButton = AuthButton(authType: .kakao)
+    private let kakaoLoginButton = AuthButton(authType: .kakao).then {
+        $0.addTarget(self, action: #selector(touchupKakaoLoginButton), for: .touchUpInside)
+    }
+    
     private let naverLoginButton = AuthButton(authType: .naver)
+    
     private let appleLoginButton = AuthButton(authType: .apple).then {
         $0.layer.borderWidth = 1
         $0.layer.borderColor = Color.black020?.cgColor
@@ -105,5 +111,52 @@ class LoginEntryViewController: UIViewController {
     @objc func touchupEmailLoginButton() {
         let emailLoginViewController = EmailLoginViewController()
         navigationController?.pushViewController(emailLoginViewController, animated: true)
+    }
+    
+    @objc func touchupKakaoLoginButton() {
+        if UserApi.isKakaoTalkLoginAvailable() {
+            UserApi.shared.loginWithKakaoTalk { (oauthToken, error) in
+                if let error = error {
+                    print(error)
+                } else {
+                    print("loginWithKakaoTalk() success.")
+                    guard let accessToken = oauthToken?.accessToken, let refreshToken = oauthToken?.refreshToken else { return }
+                    UserDefaults.standard.set(accessToken, forKey: UserDefaultsKey.accessToken)
+                    UserDefaults.standard.set(refreshToken, forKey: UserDefaultsKey.refreshToken)
+                    self.socialLogin(socialType: .kakao, accessToken: accessToken)
+                }
+            }
+        } else {
+            UserApi.shared.loginWithKakaoAccount { (oauthToken, error) in
+                if let error = error {
+                    print(error)
+                } else {
+                    print("loginWithKakaoAccount() success.")
+                    guard let accessToken = oauthToken?.accessToken, let refreshToken = oauthToken?.refreshToken else { return }
+                    UserDefaults.standard.set(accessToken, forKey: UserDefaultsKey.accessToken)
+                    UserDefaults.standard.set(refreshToken, forKey: UserDefaultsKey.refreshToken)
+                    self.socialLogin(socialType: .kakao, accessToken: accessToken)
+                }
+            }
+        }
+    }
+    
+    //MARK: - Custom Method
+    
+    private func socialLogin(socialType: SocialType, accessToken: String) {
+        let param = SocialLoginModel(socialType: socialType, accessToken: accessToken)
+        LoginAPI.shared.postSocialLogin(socialLoginData: param) { result in
+            switch result {
+            case .success(let data):
+                guard let data = data as? BaseResponse<UserModel>, let userData = data.data else { return }
+                let homeViewController = HomeViewController()
+                homeViewController.nickname = userData.nickname
+                self.navigationController?.pushViewController(homeViewController, animated: true)
+            case .requestErr(let message):
+                print(message)
+            case .pathErr, .serverErr, .networkFail:
+                print(result)
+            }
+        }
     }
 }

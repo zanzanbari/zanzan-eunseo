@@ -9,4 +9,5 @@ import Foundation
 
 struct NetworkConstant {
     static let baseURL = "https://asia-northeast3-zanzan-18f89.cloudfunctions.net/api"
+    static let loginHeader = ["Content-Type" : "application/json"]
 }
