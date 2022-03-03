@@ -114,6 +114,19 @@ class LoginEntryViewController: UIViewController {
     }
     
     @objc func touchupKakaoLoginButton() {
+        let accessToken = UserDefaults.standard.string(forKey: UserDefaultsKey.accessToken)
+        let refreshToken = UserDefaults.standard.string(forKey: UserDefaultsKey.refreshToken)
+        
+        if accessToken == nil, refreshToken == nil {
+            kakaoLogin()
+        } else {
+            socialLogin(socialType: .kakao, accessToken: accessToken ?? "", refreshToken: refreshToken ?? "")
+        }
+    }
+    
+    //MARK: - Custom Method
+    
+    private func kakaoLogin() {
         if UserApi.isKakaoTalkLoginAvailable() {
             UserApi.shared.loginWithKakaoTalk { (oauthToken, error) in
                 if let error = error {
@@ -121,9 +134,7 @@ class LoginEntryViewController: UIViewController {
                 } else {
                     print("loginWithKakaoTalk() success.")
                     guard let accessToken = oauthToken?.accessToken, let refreshToken = oauthToken?.refreshToken else { return }
-                    UserDefaults.standard.set(accessToken, forKey: UserDefaultsKey.accessToken)
-                    UserDefaults.standard.set(refreshToken, forKey: UserDefaultsKey.refreshToken)
-                    self.socialLogin(socialType: .kakao, accessToken: accessToken)
+                    self.socialLogin(socialType: .kakao, accessToken: accessToken, refreshToken: refreshToken)
                 }
             }
         } else {
@@ -133,30 +144,53 @@ class LoginEntryViewController: UIViewController {
                 } else {
                     print("loginWithKakaoAccount() success.")
                     guard let accessToken = oauthToken?.accessToken, let refreshToken = oauthToken?.refreshToken else { return }
-                    UserDefaults.standard.set(accessToken, forKey: UserDefaultsKey.accessToken)
-                    UserDefaults.standard.set(refreshToken, forKey: UserDefaultsKey.refreshToken)
-                    self.socialLogin(socialType: .kakao, accessToken: accessToken)
+                    self.socialLogin(socialType: .kakao, accessToken: accessToken, refreshToken: refreshToken)
                 }
             }
         }
     }
     
-    //MARK: - Custom Method
-    
-    private func socialLogin(socialType: SocialType, accessToken: String) {
+    private func socialLogin(socialType: SocialType, accessToken: String, refreshToken: String) {
         let param = SocialLoginModel(socialType: socialType, accessToken: accessToken)
         LoginAPI.shared.postSocialLogin(socialLoginData: param) { result in
             switch result {
             case .success(let data):
-                guard let data = data as? BaseResponse<UserModel>, let userData = data.data else { return }
+                guard let baseData = data as? BaseResponse<UserModel>, let userData = baseData.data else { return }
+                
+                UserDefaults.standard.set(userData.accesstoken, forKey: UserDefaultsKey.accessToken)
+                UserDefaults.standard.set(userData.refreshtoken, forKey: UserDefaultsKey.refreshToken)
+                
                 let homeViewController = HomeViewController()
                 homeViewController.nickname = userData.nickname
                 self.navigationController?.pushViewController(homeViewController, animated: true)
             case .requestErr(let message):
                 print(message)
+            case .expireToken:
+                self.reissueToken()
+                self.socialLogin(socialType: socialType, accessToken: UserDefaults.standard.string(forKey: UserDefaultsKey.accessToken) ?? "", refreshToken: UserDefaults.standard.string(forKey: UserDefaultsKey.refreshToken) ?? "")
             case .pathErr, .serverErr, .networkFail:
                 print(result)
             }
         }
+    }
+    
+    private func reissueToken() {
+        LoginAPI.shared.getAccessToken { result in
+            switch result {
+            case .success(let data):
+                guard let baseData = data as? BaseResponse<SocialLoginModel>, let accessToken = baseData.data?.accessToken else { return }
+                UserDefaults.standard.set(accessToken, forKey: UserDefaultsKey.accessToken)
+            case .requestErr(let message):
+                print(message)
+            case .expireToken:
+                self.kakaoLogin()
+            case .pathErr, .serverErr, .networkFail:
+                print(result)
+            }
+        }
+    }
+    
+    private func isRequireRefresh(expiredAt: Date) -> Bool {
+        return Date(timeIntervalSinceNow: 60 * 5) > expiredAt
     }
 }

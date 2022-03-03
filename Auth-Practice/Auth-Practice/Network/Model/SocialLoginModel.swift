@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum SocialType {
+enum SocialType: Codable {
     case kakao, naver, apple
     
     var name: String {
@@ -19,7 +19,7 @@ enum SocialType {
     }
 }
 
-struct SocialLoginModel {
-    let socialType: SocialType
+struct SocialLoginModel: Codable {
+    let socialType: SocialType?
     let accessToken: String
 }

@@ -263,8 +263,8 @@ class EmailLoginViewController: UIViewController {
             case .requestErr(let message):
                 guard let errorMessage = message as? String else { return }
                 self.handleRequestError(errorMessage: errorMessage)
-            case .pathErr, .serverErr, .networkFail:
-                print(self)
+            case .pathErr, .serverErr, .networkFail, .expireToken:
+                print(result)
             }
         }
     }
