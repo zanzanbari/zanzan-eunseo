@@ -10,6 +10,7 @@ import Foundation
 import Moya
 
 final class LoginAPI {
+    
     // MARK: - Static Properties
     
     static let shared = LoginAPI()
@@ -27,7 +28,31 @@ final class LoginAPI {
         loginProvider.request(.login(param: param)) { result in
             switch result {
             case .success(let response):
-                completion(self.judgeLoginStatus(by: response.statusCode, response.data))
+                completion(self.judgeLoginStatus(by: response.statusCode, response.data, decodeType: UserModel.self))
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    func postSocialLogin(socialLoginData: SocialLoginModel, completion: @escaping (NetworkResult<Any>) -> ()) {
+        loginProvider.request(.socialLogin(param: socialLoginData)) { result in
+            switch result {
+            case .success(let response):
+                completion(self.judgeLoginStatus(by: response.statusCode, response.data, decodeType: UserModel.self))
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    //MARK: - GET
+    
+    func getAccessToken(completion: @escaping (NetworkResult<Any>) -> ()) {
+        loginProvider.request(.reissueToken) { result in
+            switch result {
+            case .success(let response):
+                completion(self.judgeLoginStatus(by: response.statusCode, response.data, decodeType: SocialLoginModel.self))
             case .failure(let error):
                 print(error)
             }
@@ -36,14 +61,15 @@ final class LoginAPI {
 }
 
 extension LoginAPI {
-    private func judgeLoginStatus(by statusCode: Int, _ data: Data) -> NetworkResult<Any> {
-        guard let decodedData = try? JSONDecoder().decode(BaseResponse<UserModel>.self, from: data) else {
+    private func judgeLoginStatus<T: Codable>(by statusCode: Int, _ data: Data, decodeType: T.Type) -> NetworkResult<Any> {
+        guard let decodedData = try? JSONDecoder().decode(BaseResponse<T>.self, from: data) else {
             return .pathErr
         }
         
         switch statusCode {
         case 200: return .success(decodedData)
         case 400: return .requestErr(decodedData.message)
+        case 401: return .expireToken
         case 500: return .serverErr
         default: return .networkFail
         }

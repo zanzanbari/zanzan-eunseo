@@ -13,6 +13,7 @@ enum NetworkResult<T> {
     case pathErr
     case serverErr
     case networkFail
+    case expireToken
 }
 
 extension NetworkResult: CustomStringConvertible {
@@ -23,6 +24,7 @@ extension NetworkResult: CustomStringConvertible {
         case .pathErr: return "경로 에러🚨"
         case .serverErr: return "서버의 내부적 에러🚨"
         case .networkFail: return "네트워크 연결 실패🚨"
+        case .expireToken: return "토큰 만료🚨"
         }
     }
 }
