@@ -10,11 +10,18 @@
 		A65B5BB990D65B8BB7B6D366 /* Pods_KakaoT_Practice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B54B8EEA373E2848A6C59AE /* Pods_KakaoT_Practice.framework */; };
 		E209607A27D1210200C56867 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E209607927D1210200C56867 /* AppDelegate.swift */; };
 		E209607C27D1210200C56867 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E209607B27D1210200C56867 /* SceneDelegate.swift */; };
-		E209607E27D1210200C56867 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E209607D27D1210200C56867 /* ViewController.swift */; };
+		E209607E27D1210200C56867 /* MapSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E209607D27D1210200C56867 /* MapSearchViewController.swift */; };
 		E209608327D1210400C56867 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E209608227D1210400C56867 /* Assets.xcassets */; };
 		E209608627D1210400C56867 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E209608427D1210400C56867 /* LaunchScreen.storyboard */; };
 		E209609427D12D5A00C56867 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E209609327D12D5A00C56867 /* Color.swift */; };
 		E209609627D12E4500C56867 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E209609527D12E4500C56867 /* Color.xcassets */; };
+		E23739D627D28D9E00C44824 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23739D527D28D9E00C44824 /* Image.swift */; };
+		E2484A2827D6701A00FF786D /* PlaceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2484A2727D6701A00FF786D /* PlaceCollectionViewCell.swift */; };
+		E2484A2A27D6731A00FF786D /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2484A2927D6731A00FF786D /* UIStackView+.swift */; };
+		E2675C8A27D375B500613634 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2675C8927D375B500613634 /* UIView+.swift */; };
+		E2675C8D27D3796D00613634 /* LocationSearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2675C8C27D3796D00613634 /* LocationSearchTextField.swift */; };
+		E2675C8F27D3D63000613634 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2675C8E27D3D63000613634 /* UITextField+.swift */; };
+		E2DB123527D2426F00CF02F9 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DB123427D2426F00CF02F9 /* CircleButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,12 +31,19 @@
 		E209607627D1210200C56867 /* KakaoT-Practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KakaoT-Practice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E209607927D1210200C56867 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E209607B27D1210200C56867 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E209607D27D1210200C56867 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E209607D27D1210200C56867 /* MapSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSearchViewController.swift; sourceTree = "<group>"; };
 		E209608227D1210400C56867 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E209608527D1210400C56867 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E209608727D1210400C56867 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E209609327D12D5A00C56867 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		E209609527D12E4500C56867 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
+		E23739D527D28D9E00C44824 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		E2484A2727D6701A00FF786D /* PlaceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCollectionViewCell.swift; sourceTree = "<group>"; };
+		E2484A2927D6731A00FF786D /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
+		E2675C8927D375B500613634 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		E2675C8C27D3796D00613634 /* LocationSearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchTextField.swift; sourceTree = "<group>"; };
+		E2675C8E27D3D63000613634 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
+		E2DB123427D2426F00CF02F9 /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +64,6 @@
 				A31226D72854B7A521A6C5E0 /* Pods-KakaoT-Practice.debug.xcconfig */,
 				279A1DBA329F20FB62CBFD7E /* Pods-KakaoT-Practice.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -103,7 +116,8 @@
 		E209608E27D1238900C56867 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				E209607D27D1210200C56867 /* ViewController.swift */,
+				E2484A2427D66D8A00FF786D /* Map */,
+				E2484A2327D66D7900FF786D /* Search */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -111,6 +125,7 @@
 		E209608F27D1239200C56867 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				E2675C8827D3759300613634 /* Extension */,
 				E209609227D12D0400C56867 /* Constant */,
 				E209609027D1254C00C56867 /* Support */,
 			);
@@ -139,8 +154,69 @@
 			isa = PBXGroup;
 			children = (
 				E209609327D12D5A00C56867 /* Color.swift */,
+				E23739D527D28D9E00C44824 /* Image.swift */,
 			);
 			path = Constant;
+			sourceTree = "<group>";
+		};
+		E2484A2327D66D7900FF786D /* Search */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		E2484A2427D66D8A00FF786D /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				E2DB123327D2424700CF02F9 /* ViewController */,
+				E2DB123227D2423F00CF02F9 /* View */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		E2484A2527D66FDB00FF786D /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				E2DB123427D2426F00CF02F9 /* CircleButton.swift */,
+				E2675C8C27D3796D00613634 /* LocationSearchTextField.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		E2484A2627D66FF900FF786D /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E2484A2727D6701A00FF786D /* PlaceCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		E2675C8827D3759300613634 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E2675C8927D375B500613634 /* UIView+.swift */,
+				E2675C8E27D3D63000613634 /* UITextField+.swift */,
+				E2484A2927D6731A00FF786D /* UIStackView+.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		E2DB123227D2423F00CF02F9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E2484A2627D66FF900FF786D /* Cell */,
+				E2484A2527D66FDB00FF786D /* Component */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E2DB123327D2424700CF02F9 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E209607D27D1210200C56867 /* MapSearchViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,8 +334,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E209607E27D1210200C56867 /* ViewController.swift in Sources */,
+				E2DB123527D2426F00CF02F9 /* CircleButton.swift in Sources */,
+				E23739D627D28D9E00C44824 /* Image.swift in Sources */,
+				E2484A2827D6701A00FF786D /* PlaceCollectionViewCell.swift in Sources */,
+				E2675C8A27D375B500613634 /* UIView+.swift in Sources */,
+				E209607E27D1210200C56867 /* MapSearchViewController.swift in Sources */,
+				E2675C8D27D3796D00613634 /* LocationSearchTextField.swift in Sources */,
 				E209609427D12D5A00C56867 /* Color.swift in Sources */,
+				E2675C8F27D3D63000613634 /* UITextField+.swift in Sources */,
+				E2484A2A27D6731A00FF786D /* UIStackView+.swift in Sources */,
 				E209607A27D1210200C56867 /* AppDelegate.swift in Sources */,
 				E209607C27D1210200C56867 /* SceneDelegate.swift in Sources */,
 			);
