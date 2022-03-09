@@ -30,6 +30,7 @@ class CircleButton: UIButton {
         config.title = title
         config.baseBackgroundColor = Color.white
         config.baseForegroundColor = Color.navy100
+        config.attributedTitle?.font = FontStyle.body7.font
         if title != nil {
             config.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 13)
         }

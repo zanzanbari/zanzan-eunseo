@@ -38,8 +38,17 @@ class PlaceCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    var placeName: String = "" {
+        didSet {
+            placeLabel.text = placeName
+        }
+    }
+    
     private let leftIcon = UIImageView()
-    private let placeLabel = UILabel()
+    private let placeLabel = UILabel().then {
+        $0.font = FontStyle.body6.font
+        $0.textColor = Color.black100
+    }
     
     private lazy var placeStackView = UIStackView().then {
         $0.axis = .horizontal
@@ -65,7 +74,7 @@ class PlaceCollectionViewCell: UICollectionViewCell {
     
     private func configUI() {
         backgroundColor = Color.gray500
-        contentView.layer.cornerRadius = 20
+        layer.cornerRadius = 20
     }
     
     private func setupLayout() {

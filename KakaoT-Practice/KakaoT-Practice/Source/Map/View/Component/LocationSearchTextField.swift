@@ -54,6 +54,7 @@ class LocationSearchTextField: UITextField {
     
     private func configUI() {
         textColor = Color.black100
+        font = FontStyle.body1.font
         layer.cornerRadius = 30
         addLeftPadding(size: 36)
     }
@@ -62,7 +63,8 @@ class LocationSearchTextField: UITextField {
         addSubview(leftIcon)
         
         leftIcon.snp.makeConstraints {
-            $0.top.leading.equalToSuperview()
+            $0.leading.equalToSuperview()
+            $0.centerY.equalToSuperview()
         }
     }
 }
