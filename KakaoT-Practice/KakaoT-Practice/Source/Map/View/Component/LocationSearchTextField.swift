@@ -42,12 +42,6 @@ class LocationSearchTextField: UITextField {
         setupLayout()
     }
     
-//    init(type: SearchType) {
-//        super.init(frame: .zero)
-//        configUI(type: type)
-//        setupLayout()
-//    }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -55,15 +49,15 @@ class LocationSearchTextField: UITextField {
     private func configUI() {
         textColor = Color.black100
         font = FontStyle.body1.font
-        layer.cornerRadius = 30
-        addLeftPadding(size: 36)
+        layer.cornerRadius = 25
+        addLeftPadding(size: 44)
     }
     
     private func setupLayout() {
         addSubview(leftIcon)
         
         leftIcon.snp.makeConstraints {
-            $0.leading.equalToSuperview()
+            $0.leading.equalToSuperview().inset(12)
             $0.centerY.equalToSuperview()
         }
     }
